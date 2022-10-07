@@ -24,7 +24,7 @@ export default function Section2() {
         coverflowEffect={{
           rotate: 0,
           stretch: 40,
-          depth: 100,
+          depth: 100, 
           modifier: 1,
           slideShadows: true,
         }}
