@@ -1,0 +1,122 @@
+.content_main_devices_view{
+  overflow: hidden;
+  min-height: initial;
+  margin-top: 5%;
+  margin-bottom:5%;
+  
+}
+
+.content_devices_view {
+  width: 60%;
+  height: auto;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.svg_devices_circles {
+  width: 100%;
+  height: 100%;
+  grid-column: 1 / 13;
+  grid-row: 1 / 5;
+  overflow: visible;
+}
+
+.svg_devices_circles circle {
+  animation: floating_devices_circles_v1 50s infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.svg_devices_circles circle:nth-child(2) {
+  animation: floating_devices_circles_v1 40s infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.svg_devices_circles circle:nth-child(3) {
+  animation: floating_devices_circles_v2 35s infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.device-computer{
+  grid-column: 2 / 12;
+  grid-row: 1 / 5;
+  width: 100%;
+  height: 83%;
+  margin-top: 10%;
+  background-image: url('../imgs/devices-view/rectangle-8.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border-radius: 23.86px;
+  border-width: 5.96px;
+}
+
+.device-phone{
+  grid-column: 9 / 12;
+  grid-row: 2 / 5;
+  width: 90%;
+  height: 100%;
+  box-shadow: 11.92868709564209px 15.507293701171875px 17.893030166625977px 0 rgba(245,238,244,0.8);
+  background-image: url('../imgs/devices-view/rectangle-9.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border-radius: 23.86px;
+  border-width: 5.96px;
+  margin-top: 35%;
+  margin-left: 40%;
+}
+
+@keyframes floating_devices_circles_v1 {
+  0%{
+    transform: translate(0%, 0%);
+    transform-origin: 50% 50%;
+  }
+  20%{
+    transform: translate(2%, -1%);
+    transform-origin: 50% 50%;
+  }
+  40%{
+    transform: translate(-1%, -2%);
+    transform-origin: 50% 50%;
+  }
+  60%{
+    transform: translate(-2%, 1%);
+    transform-origin: 50% 50%;
+  }
+  80%{
+    transform: translate(-3%, 2%);
+    transform-origin: 50% 50%;
+  }
+  100%{
+    transform: translate(0%, 0%);
+    transform-origin: 50% 50%;
+  }
+}
+
+@keyframes floating_devices_circles_v2 {
+  0%{
+    transform: translate(0%, 0%);
+    transform-origin: 50% 50%;
+  }
+  20%{
+    transform: translate(-1%, 2%);
+    transform-origin: 50% 50%;
+  }
+  40%{
+    transform: translate(2%, 1%);
+    transform-origin: 50% 50%;
+  }
+  60%{
+    transform: translate(-3%, 3%);
+    transform-origin: 50% 50%;
+  }
+  80%{
+    transform: translate(-2%, 1%);
+    transform-origin: 50% 50%;
+  }
+  100%{
+    transform: translate(0%, 0%);
+    transform-origin: 50% 50%;
+  }
+}
+/*--Fin Devices View CSS--*/

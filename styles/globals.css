@@ -1,0 +1,590 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+details ::marker {
+    unicode-bidi: isolate;
+    font-variant-numeric: tabular-nums;
+    text-transform: none;
+   
+}
+           
+
+           p[open] span::after{
+                content: "-";
+            }
+
+            p[open] span ~ * {
+                animation: slideDown 0.3s ease-in-out;
+            }
+
+            p[open] span p {
+                opacity: 0;
+                animation-name: showContent;
+                animation-duration: 0.6s;
+                animation-delay: 0.2s;
+                animation-fill-mode: forwards;
+                margin: 0;
+            }
+
+            @keyframes showContent {
+                from {
+                opacity: 0;
+                height: 0;
+                }
+                to {
+                opacity: 1;
+               
+                }
+            }
+            @keyframes slideDown {
+                from {
+                opacity: 0;
+                height: 0;
+                padding: 0;
+                }
+
+                to {
+                opacity: 1;
+               
+                }
+            }
+
+
+/*--Header SPM CSS--*/
+:root{
+  --spm-cl: #3c3c3c;
+  --duration_anim: 10s;
+}
+
+@font-face{
+  font-family:"Roboto Bk";
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
+  src:url(../public/fonts/Roboto-Black.ttf);
+}
+
+body{
+  font-size: 16px;
+}
+
+.main{
+  overflow: hidden;
+  min-height: initial;
+}
+
+.content_head {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em;
+  color: var(--spm-cl);
+  font-family: "Roboto";
+}
+
+.content_head > .container_logos {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.content_head > .container_logos > .logo{
+  width: 84px;
+  height: 60px;
+  animation-fill-mode: both !important;
+  animation-duration: var(--duration_anim) !important;
+  animation-iteration-count: infinite !important;
+  animation-fill-mode: both !important;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.content_head > .container_logos > .logo:nth-child(1){
+  animation: change_logo_color_1;
+}
+
+.content_head > .container_logos > .logo:nth-child(2){
+  animation: change_logo_color_2;
+}
+
+.content_head > .container_logos > .logo:nth-child(3){
+  animation: change_logo_color_3;
+}
+
+.content_head > .container_logos > .logo:nth-child(4){
+  animation: change_logo_color_4;
+}
+
+.content_sign_lng{
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 2em;
+}
+
+.contain_lng{
+  width: auto;
+}
+
+.contain_sign{
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 1em;
+}
+
+.contain_sign a, .contain_sign button {
+  width: auto;
+  color: var(--spm-cl);
+}
+
+.separate{
+  width: 2px;
+  height: 20px;
+  background: var(--spm-cl);
+}
+
+.content_pattern_texts{
+  max-width: 1500px;
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  border: 5px solid #EEF3F5;
+  border-radius: 15px;
+  overflow: hidden;
+  font-family: 'Roboto Bk';
+}
+
+.contain_pattern{
+  grid-column: 1 / 13;
+  grid-row: 1;
+  width: 65%;
+  position: relative;
+  z-index: 1;
+}
+
+.contain_pattern > img{
+  width: 100%;
+}
+
+.contain_texts{
+  grid-column: 2 / 12;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.slogans{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: -10%;
+}
+
+.big_slogan{
+  color: var(--spm-cl);
+  font-size: 1150%;
+  width: auto;
+  grid-column: 1;
+  grid-row: 1;
+  text-align: right;
+  animation-duration: var(--duration_anim) !important;
+  animation-iteration-count: infinite !important;
+  animation-timing-function: ease !important;
+  animation-fill-mode: both !important;
+}
+
+.big_slogan:nth-child(1){
+  animation: move_slogan_1;
+}
+
+.big_slogan:nth-child(2){
+  animation: move_slogan_2;
+}
+
+.big_slogan:nth-child(3){
+  animation: move_slogan_3;
+}
+
+.big_slogan:nth-child(4){
+  animation: move_slogan_4;
+}
+
+.little_slogan{
+  color: var(--spm-cl);
+  font-size: 100%;
+  width: auto;
+  margin-top: 5px;
+  grid-column: 1;
+  grid-row: 2;
+  text-align: right;
+  font-weight: 900;
+}
+
+.btn_signup, .btn_btm_arrow{
+  width: auto;
+  cursor: pointer;
+}
+
+.btn_signup{
+  padding: 0;
+  border-radius: 7px;
+  color: #fff;
+  margin-top: 5%;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  overflow: hidden;
+}
+
+.btn_signup > em{
+  padding: 0.7em 2em;
+  width: 100%;
+  height: 100%;
+  grid-column: 1;
+  grid-row: 1;
+  position: relative;
+  z-index: 2;
+  font-style: normal;
+  font-family: 'Roboto Bk';
+}
+
+.btn_signup > .bg{
+  width: 100%;
+  height: 100%;
+  grid-column: 1;
+  grid-row: 1;
+  position: relative;
+  z-index: 1;
+  animation-duration: var(--duration_anim) !important;
+  animation-iteration-count: infinite !important;
+  animation-timing-function: ease !important;
+  animation-fill-mode: both;
+}
+
+.btn_signup > .bg_1{
+  animation: change_logo_color_1;
+  background: linear-gradient(92.36deg, #7EC290 4.68%, #039EAA 100.05%);
+}
+
+.btn_signup > .bg_2{
+  animation: change_logo_color_2;
+  background: linear-gradient(92.2deg, #E3077E 4.89%, #A12281 98.84%);
+}
+
+.btn_signup > .bg_3{
+  animation: change_logo_color_3;
+  background: linear-gradient(92.66deg, #F48F1F 5.41%, #E52125 100.51%);
+}
+
+.btn_signup > .bg_4{
+  animation: change_logo_color_4;
+  background: linear-gradient(93.11deg, #5E77BA 0.06%, #2B2E70 98.3%);
+}
+
+.btn_btm_arrow {
+  margin-top: 10em;
+  margin-right: 3em;
+  color: var(--spm-cl);
+  margin-bottom: -15em;
+}
+
+@keyframes change_logo_color_1 {
+  0%{
+    opacity: 1;
+  }
+  25%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 0;
+  }
+  75%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes change_logo_color_2 {
+  0%{
+    opacity: 0;
+  }
+  25%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0;
+  }
+  75%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+@keyframes change_logo_color_3 {
+  0%{
+    opacity: 0;
+  }
+  25%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  75%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+@keyframes change_logo_color_4 {
+  0%{
+    opacity: 0;
+  }
+  25%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 0;
+  }
+  75%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+@keyframes move_slogan_1 {
+  0%{
+    transform: translateX(0vw);
+    opacity: 1;
+  }
+  22.5%{
+    transform: translateX(0vw);
+    opacity: 1;
+  }
+  27.45555555%{
+    transform: translateX(-100vw);
+    opacity: 1;
+  }
+  27.5%{
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  47.5%{
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  52.5%{
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  72.5%{
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  77.5%{
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  95%{
+    transform: translateX(100vw);
+    opacity: 1;
+  }
+  100%{
+    transform: translateX(0vw);
+    opacity: 1;
+  }
+}
+
+@keyframes move_slogan_2 {
+  0%{
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  22.5%{
+    transform: translateX(100vw);
+    opacity: 1;
+  }
+  27.5%{
+    transform: translateX(0vw);
+    opacity: 1;
+  }
+  47.5%{
+    transform: translateX(0vw);
+    opacity: 1;
+  }
+  52.45555555%{
+    transform: translateX(-100vw);
+    opacity: 1;
+  }
+  52.5%{
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  72.5%{
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  77.5%{
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  95%{
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  100%{
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+}
+
+@keyframes move_slogan_3 {
+  0%{
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  22.5%{
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  27.5%{
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  47.5%{
+    transform: translateX(100vw);
+    opacity: 1;
+  }
+  52.5%{
+    transform: translateX(0vw);
+    opacity: 1;
+  }
+  72.5%{
+    transform: translateX(0vw);
+    opacity: 1;
+  }
+  77.45555555%{
+    transform: translateX(-100vw);
+    opacity: 1;
+  }
+  77.5%{
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  95%{
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  100%{
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+}
+
+@keyframes move_slogan_4 {
+  0%{
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  22.5%{
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  27.5%{
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  47.5%{
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  52.5%{
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  72.5%{
+    transform: translateX(100vw);
+    opacity: 1;
+  }
+  77.5%{
+    transform: translateX(0vw);
+    opacity: 1;
+  }
+  95%{
+    transform: translateX(0vw);
+    opacity: 1;
+  }
+  99.8999999999%{
+    transform: translateX(-100vw);
+    opacity: 1;
+  }
+  100%{
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .content_head{}
+
+  .container_logos{}
+
+  .content_sign_lng {
+    margin-right: 1em;
+    padding: 0.5em;
+  }
+
+  .content_pattern_texts {
+    min-height: 85vh;
+  }
+
+  .contain_texts{}
+
+  .big_slogan{
+    font-size: 600%;
+  }
+
+  .contain_pattern {
+    width: 100%;
+  }
+
+  .contain_pattern > img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .btn_signup {
+    margin-top: 40%;
+  }
+
+  .btn_btm_arrow {
+    margin-top: 3em;
+    margin-bottom: -10em;
+  }
+}
+/*--Fin Header SPM CSS--*/
